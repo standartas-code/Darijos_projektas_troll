@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //jump
+        //jump and double jump
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
         {
             rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);

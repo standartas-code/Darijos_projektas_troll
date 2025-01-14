@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -59,4 +59,5 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+    
 }

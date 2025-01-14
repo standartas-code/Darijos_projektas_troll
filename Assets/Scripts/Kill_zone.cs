@@ -15,6 +15,7 @@ public class Kill_zone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Destroy(other);
             Sound();
             Invoke("RestartLevel", 2f);
         }

@@ -6,7 +6,10 @@ public class Doors : MonoBehaviour
 {
     public Transform playerStartPosition; 
     public GameObject nextDoor;
-    public bool isRealDoor = false; 
+    public bool isRealDoor = false;
+
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,10 +22,12 @@ public class Doors : MonoBehaviour
                 //next door
                 if (nextDoor != null)
                 {
-                    Debug.Log("?????????? ????????? ?????!");
                     nextDoor.GetComponent<SpriteRenderer>().enabled = true; 
                     nextDoor.GetComponent<BoxCollider2D>().enabled = true; 
                 }
+
+                spriteRenderer.enabled = false;
+                boxCollider.enabled = false;
             }
         }
     }

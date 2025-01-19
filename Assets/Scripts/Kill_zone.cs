@@ -16,6 +16,7 @@ public class Kill_zone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(other);
+            other.GetComponent<SpriteRenderer>().enabled = false;
             Sound();
             Invoke("RestartLevel", 2f);
         }
@@ -23,7 +24,7 @@ public class Kill_zone : MonoBehaviour
 
     private void RestartLevel()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Sound()
